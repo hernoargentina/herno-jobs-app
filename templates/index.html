@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Buscador de Empleos</title>
+</head>
+<body>
+    <h1>Buscar empleos</h1>
+
+    <form action="/buscar" method="POST">
+        <label>Palabra clave:</label>
+        <input type="text" name="query" required>
+
+        <label>Páginas:</label>
+        <input type="number" name="paginas" value="1" min="1" max="5">
+
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>
