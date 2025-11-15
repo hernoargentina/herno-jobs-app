@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Resultados - {{ query }}</title>
+</head>
+<body>
+    <h1>Resultados para "{{ query }}"</h1>
+    <p>Total: {{ total }}</p>
+    <hr>
+
+    {% for r in resultados %}
+        <div>
+            <h3>{{ r.get("title", "Sin título") }}</h3>
+
+            <p><strong>Empresa:</strong>
+                {{ r.get("company", {}).get("display_name", "No informado") }}
+            </p>
+
+            <p><strong>Ubicación:</strong>
+                {{ r.get("location", {}).get("display_name", "No disponible") }}
+            </p>
+
+            <p><strong>Descripción:</strong>
+                {{ r.get("description", "Sin descripción") }}
+            </p>
+
+            <a href="{{ r.get("redirect_url", "#") }}" target="_blank">
+                Ver publicación
+            </a>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
